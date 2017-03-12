@@ -1,0 +1,8 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <S:Fault xmlns:ns4="http://www.w3.org/2003/05/soap-envelope">
+         <faultcode>S:Client</faultcode>
+         <faultstring>[Fatal] line nr: -1 column nr: -1 message: org.xml.sax.SAXException: [Error] line nr: -1 column nr: -1 message: cvc-datatype-valid.1.2.1: '' is not a valid value for 'integer'.</faultstring>
+      </S:Fault>
+   </S:Body>
+</S:Envelope>

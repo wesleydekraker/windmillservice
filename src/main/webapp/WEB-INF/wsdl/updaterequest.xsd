@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        elementFormDefault="qualified" targetNamespace="http://wesleydekraker.nl/windmillservice/updaterequest"
+        xmlns:tp="http://wesleydekraker.nl/windmillservice/types">
+
+    <import namespace="http://wesleydekraker.nl/windmillservice/types"
+            schemaLocation="types.xsd"/>
+
+    <!-- root element -->
+    <element name="updateRequest" type="tp:windmill"/>
+</schema>

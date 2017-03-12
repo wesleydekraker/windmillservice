@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wesleydekraker.nl/windmillservice/types"
+        elementFormDefault="qualified" targetNamespace="http://wesleydekraker.nl/windmillservice/types">
+
+    <complexType name="windmillIdentity">
+        <sequence>
+            <element name="id" type="positiveInteger">
+                <annotation>
+                    <documentation>Nummer die een windmolen uniek identificeerbaar maakt.</documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="windmillDetails">
+        <sequence>
+            <element name="model" type="string">
+                <annotation>
+                    <documentation>Het model windmolen, bijvoorbeeld: GE 1.5MW.</documentation>
+                </annotation>
+            </element>
+            <element name="power">
+                <annotation>
+                    <documentation>De maximale opbrengst in megawatt.</documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="float">
+                        <minExclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="lengthBlade" type="positiveInteger">
+                <annotation>
+                    <documentation>De lengte van een blade in feet.</documentation>
+                </annotation>
+            </element>
+            <element name="heightTower" type="positiveInteger">
+                <annotation>
+                    <documentation>De hoogte van een toren in feet.</documentation>
+                </annotation>
+            </element>
+            <element name="latitude">
+                <annotation>
+                    <documentation>De breedtegraad in bolcoördinaten.</documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="float">
+                        <minInclusive value="-90"/>
+                        <maxInclusive value="90"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="longitude">
+                <annotation>
+                    <documentation>De lengtegraad in bolcoördinaten.</documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="float">
+                        <minInclusive value="-180"/>
+                        <maxInclusive value="180"/>
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="windmill">
+        <sequence>
+            <element name="identity" type="tns:windmillIdentity"/>
+            <element name="details" type="tns:windmillDetails"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="windmillSuccess">
+        <annotation>
+            <documentation>
+                Boolean die bij het verwijderen of updaten laat weten of de windmolen a.d.h.v. het id gevonden en bijgewerkt is.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="success" type="boolean"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="windmillFault">
+        <sequence>
+            <element name="errorCode" nillable="false" type="short"/>
+            <element maxOccurs="1" minOccurs="0" name="message" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,14 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <S:Fault xmlns:ns4="http://www.w3.org/2003/05/soap-envelope">
+         <faultcode>S:Server</faultcode>
+         <faultstring>Er ging iets mis met het ophalen van een windmolen</faultstring>
+         <detail>
+            <ns2:windmillFault xmlns:ns2="http://wesleydekraker.nl/windmillservice/fault" xmlns="http://wesleydekraker.nl/windmillservice/types" xmlns:ns10="http://wesleydekraker.nl/windmillservice/createresponse" xmlns:ns3="http://wesleydekraker.nl/windmillservice/updaterequest" xmlns:ns4="http://wesleydekraker.nl/windmillservice/readresponse" xmlns:ns5="http://wesleydekraker.nl/windmillservice/readrequest" xmlns:ns6="http://wesleydekraker.nl/windmillservice/deleteresponse" xmlns:ns7="http://wesleydekraker.nl/windmillservice/updateresponse" xmlns:ns8="http://wesleydekraker.nl/windmillservice/deleterequest" xmlns:ns9="http://wesleydekraker.nl/windmillservice/createrequest">
+               <errorCode>1</errorCode>
+               <message>Geen windmolen gevonden met id: 1.</message>
+            </ns2:windmillFault>
+         </detail>
+      </S:Fault>
+   </S:Body>
+</S:Envelope>

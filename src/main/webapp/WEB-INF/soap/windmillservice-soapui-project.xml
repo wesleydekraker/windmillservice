@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="d3a2b42a-23ac-4a4c-91ab-78a403f20353" activeEnvironment="Default" name="windmillservice" resourceRoot="" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="9278d0d0-d035-47d1-b83d-359f78763d43" wsaVersion="NONE" name="windmillServiceBinding" type="wsdl" bindingName="{http://wesleydekraker.nl/windmillservice/}windmillServiceBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/Wesley/IdeaProjects/windmillservice/src/main/webapp/WEB-INF/wsdl/windmillservice.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\Wesley\IdeaProjects\windmillservice\src\main\webapp\WEB-INF\wsdl\windmillservice.wsdl"><con:part><con:url>file:\C:\Users\Wesley\IdeaProjects\windmillservice\src\main\webapp\WEB-INF\wsdl\windmillservice.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="WindmillService" targetNamespace="http://wesleydekraker.nl/windmillservice/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:crq="http://wesleydekraker.nl/windmillservice/createrequest" xmlns:crs="http://wesleydekraker.nl/windmillservice/createresponse" xmlns:rrq="http://wesleydekraker.nl/windmillservice/readrequest" xmlns:rrs="http://wesleydekraker.nl/windmillservice/readresponse" xmlns:urq="http://wesleydekraker.nl/windmillservice/updaterequest" xmlns:urs="http://wesleydekraker.nl/windmillservice/updateresponse" xmlns:drq="http://wesleydekraker.nl/windmillservice/deleterequest" xmlns:drs="http://wesleydekraker.nl/windmillservice/deleteresponse" xmlns:flt="http://wesleydekraker.nl/windmillservice/fault" xmlns="http://wesleydekraker.nl/windmillservice/">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import namespace="http://wesleydekraker.nl/windmillservice/createrequest" schemaLocation="createrequest.xsd"/>
+      <xsd:import namespace="http://wesleydekraker.nl/windmillservice/createresponse" schemaLocation="createresponse.xsd"/>
+      <xsd:import namespace="http://wesleydekraker.nl/windmillservice/readrequest" schemaLocation="readrequest.xsd"/>
+      <xsd:import namespace="http://wesleydekraker.nl/windmillservice/readresponse" schemaLocation="readresponse.xsd"/>
+      <xsd:import namespace="http://wesleydekraker.nl/windmillservice/updaterequest" schemaLocation="updaterequest.xsd"/>
+      <xsd:import namespace="http://wesleydekraker.nl/windmillservice/updateresponse" schemaLocation="updateresponse.xsd"/>
+      <xsd:import namespace="http://wesleydekraker.nl/windmillservice/deleterequest" schemaLocation="deleterequest.xsd"/>
+      <xsd:import namespace="http://wesleydekraker.nl/windmillservice/deleteresponse" schemaLocation="deleteresponse.xsd"/>
+      <xsd:import namespace="http://wesleydekraker.nl/windmillservice/fault" schemaLocation="fault.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="createrequest">
+    <wsdl:part name="createrequest" element="crq:createRequest"/>
+  </wsdl:message>
+  <wsdl:message name="createresponse">
+    <wsdl:part name="createresponse" element="crs:createResponse"/>
+  </wsdl:message>
+  <wsdl:message name="readrequest">
+    <wsdl:part name="readrequest" element="rrq:readRequest"/>
+  </wsdl:message>
+  <wsdl:message name="readresponse">
+    <wsdl:part name="readresponse" element="rrs:readResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updaterequest">
+    <wsdl:part name="updaterequest" element="urq:updateRequest"/>
+  </wsdl:message>
+  <wsdl:message name="updateresponse">
+    <wsdl:part name="updateresponse" element="urs:updateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="deleterequest">
+    <wsdl:part name="deleterequest" element="drq:deleteRequest"/>
+  </wsdl:message>
+  <wsdl:message name="deleteresponse">
+    <wsdl:part name="deleteresponse" element="drs:deleteResponse"/>
+  </wsdl:message>
+  <wsdl:message name="fault">
+    <wsdl:part name="fault" element="flt:windmillFault"/>
+  </wsdl:message>
+  <wsdl:portType name="windmillServiceInterface">
+    <wsdl:operation name="create">
+      <wsdl:input message="createrequest"/>
+      <wsdl:output message="createresponse"/>
+      <wsdl:fault name="fault" message="fault"/>
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <wsdl:input message="readrequest"/>
+      <wsdl:output message="readresponse"/>
+      <wsdl:fault name="fault" message="fault"/>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input message="updaterequest"/>
+      <wsdl:output message="deleteresponse"/>
+      <wsdl:fault name="fault" message="fault"/>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="deleterequest"/>
+      <wsdl:output message="deleteresponse"/>
+      <wsdl:fault name="fault" message="fault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="windmillServiceBinding" type="windmillServiceInterface">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="create">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="windmillService">
+    <wsdl:port name="WS-Port" binding="windmillServiceBinding">
+      <soap:address location="http://localhost:8080/windmillservice/soap"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\Users\Wesley\IdeaProjects\windmillservice\src\main\webapp\WEB-INF\wsdl\createrequest.xsd</con:url><con:content>&lt;schema elementFormDefault="qualified" targetNamespace="http://wesleydekraker.nl/windmillservice/createrequest" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tp="http://wesleydekraker.nl/windmillservice/types">
+  &lt;import namespace="http://wesleydekraker.nl/windmillservice/types" schemaLocation="types.xsd"/>
+  &lt;!--root element-->
+  &lt;element name="createRequest" type="tp:windmillDetails"/>
+&lt;/schema></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\Wesley\IdeaProjects\windmillservice\src\main\webapp\WEB-INF\wsdl\types.xsd</con:url><con:content><![CDATA[<schema elementFormDefault="qualified" targetNamespace="http://wesleydekraker.nl/windmillservice/types" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wesleydekraker.nl/windmillservice/types">
+  <complexType name="windmillIdentity">
+    <sequence>
+      <element name="id" type="positiveInteger"/>
+    </sequence>
+  </complexType>
+  <complexType name="windmillDetails">
+    <annotation>
+      <documentation>Name of the object from the repository.</documentation>
+    </annotation>
+    <sequence>
+      <element name="model" type="string"/>
+      <element name="power">
+        <simpleType>
+          <restriction base="float">
+            <minInclusive value="0"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element name="lengthBlade" type="positiveInteger"/>
+      <element name="heightTower" type="positiveInteger"/>
+      <element name="latitude" type="float"/>
+      <element name="longitude" type="float"/>
+    </sequence>
+  </complexType>
+  <complexType name="windmill">
+    <sequence>
+      <element name="identity" type="tns:windmillIdentity"/>
+      <element name="details" type="tns:windmillDetails"/>
+    </sequence>
+  </complexType>
+  <complexType name="windmillSuccess">
+    <sequence>
+      <element name="success" type="boolean"/>
+    </sequence>
+  </complexType>
+  <complexType name="windmillFault">
+    <sequence>
+      <element name="errorCode" nillable="false" type="short"/>
+      <element maxOccurs="1" minOccurs="0" name="message" type="string"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\Wesley\IdeaProjects\windmillservice\src\main\webapp\WEB-INF\wsdl\createresponse.xsd</con:url><con:content>&lt;schema elementFormDefault="qualified" targetNamespace="http://wesleydekraker.nl/windmillservice/createresponse" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tp="http://wesleydekraker.nl/windmillservice/types">
+  &lt;import namespace="http://wesleydekraker.nl/windmillservice/types" schemaLocation="types.xsd"/>
+  &lt;!--root element-->
+  &lt;element name="createResponse" type="tp:windmillIdentity"/>
+&lt;/schema></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\Wesley\IdeaProjects\windmillservice\src\main\webapp\WEB-INF\wsdl\readrequest.xsd</con:url><con:content>&lt;schema elementFormDefault="qualified" targetNamespace="http://wesleydekraker.nl/windmillservice/readrequest" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tp="http://wesleydekraker.nl/windmillservice/types">
+  &lt;import namespace="http://wesleydekraker.nl/windmillservice/types" schemaLocation="types.xsd"/>
+  &lt;!--root element-->
+  &lt;element name="readRequest" type="tp:windmillIdentity"/>
+&lt;/schema></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\Wesley\IdeaProjects\windmillservice\src\main\webapp\WEB-INF\wsdl\readresponse.xsd</con:url><con:content>&lt;schema elementFormDefault="qualified" targetNamespace="http://wesleydekraker.nl/windmillservice/readresponse" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tp="http://wesleydekraker.nl/windmillservice/types">
+  &lt;import namespace="http://wesleydekraker.nl/windmillservice/types" schemaLocation="types.xsd"/>
+  &lt;!--root element-->
+  &lt;element name="readResponse" type="tp:windmillDetails"/>
+&lt;/schema></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\Wesley\IdeaProjects\windmillservice\src\main\webapp\WEB-INF\wsdl\updaterequest.xsd</con:url><con:content>&lt;schema elementFormDefault="qualified" targetNamespace="http://wesleydekraker.nl/windmillservice/updaterequest" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tp="http://wesleydekraker.nl/windmillservice/types">
+  &lt;import namespace="http://wesleydekraker.nl/windmillservice/types" schemaLocation="types.xsd"/>
+  &lt;!--root element-->
+  &lt;element name="updateRequest" type="tp:windmill"/>
+&lt;/schema></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\Wesley\IdeaProjects\windmillservice\src\main\webapp\WEB-INF\wsdl\updateresponse.xsd</con:url><con:content>&lt;schema elementFormDefault="qualified" targetNamespace="http://wesleydekraker.nl/windmillservice/updateresponse" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tp="http://wesleydekraker.nl/windmillservice/types">
+  &lt;import namespace="http://wesleydekraker.nl/windmillservice/types" schemaLocation="types.xsd"/>
+  &lt;!--root element-->
+  &lt;element name="updateResponse" type="tp:windmillSuccess"/>
+&lt;/schema></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\Wesley\IdeaProjects\windmillservice\src\main\webapp\WEB-INF\wsdl\deleterequest.xsd</con:url><con:content>&lt;schema elementFormDefault="qualified" targetNamespace="http://wesleydekraker.nl/windmillservice/deleterequest" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tp="http://wesleydekraker.nl/windmillservice/types">
+  &lt;import namespace="http://wesleydekraker.nl/windmillservice/types" schemaLocation="types.xsd"/>
+  &lt;!--root element-->
+  &lt;element name="deleteRequest" type="tp:windmillIdentity"/>
+&lt;/schema></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\Wesley\IdeaProjects\windmillservice\src\main\webapp\WEB-INF\wsdl\deleteresponse.xsd</con:url><con:content>&lt;schema elementFormDefault="qualified" targetNamespace="http://wesleydekraker.nl/windmillservice/deleteresponse" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tp="http://wesleydekraker.nl/windmillservice/types">
+  &lt;import namespace="http://wesleydekraker.nl/windmillservice/types" schemaLocation="types.xsd"/>
+  &lt;!--root element-->
+  &lt;element name="deleteResponse" type="tp:windmillSuccess"/>
+&lt;/schema></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\Wesley\IdeaProjects\windmillservice\src\main\webapp\WEB-INF\wsdl\fault.xsd</con:url><con:content>&lt;schema elementFormDefault="qualified" targetNamespace="http://wesleydekraker.nl/windmillservice/fault" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tp="http://wesleydekraker.nl/windmillservice/types">
+  &lt;import namespace="http://wesleydekraker.nl/windmillservice/types" schemaLocation="types.xsd"/>
+  &lt;!--root element-->
+  &lt;element name="windmillFault" type="tp:windmillFault"/>
+&lt;/schema></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/windmillservice/soap</con:endpoint></con:endpoints><con:operation id="8e077d8b-55e8-4bb2-81f9-be2fa6633cca" isOneWay="false" action="" name="create" bindingOperationName="create" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e6dc1000-de5e-4bbb-a1f6-5f4baaf7fc7a" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/windmillservice/soap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cre="http://wesleydekraker.nl/windmillservice/createrequest" xmlns:typ="http://wesleydekraker.nl/windmillservice/types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cre:createRequest>
+         <typ:model>GE 1.5MW</typ:model>
+         <typ:power>1.5</typ:power>
+         <typ:lengthBlade>116</typ:lengthBlade>
+         <typ:heightTower>212</typ:heightTower>
+         <typ:latitude>52.325491</typ:latitude>
+         <typ:longitude>4.579099</typ:longitude>
+      </cre:createRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wesleydekraker.nl/windmillservice/windmillServiceInterface/createRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a2193bb1-5bd2-4f84-90bc-f81a02a59205" isOneWay="false" action="" name="delete" bindingOperationName="delete" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="dafeb990-b36b-4f39-8ef4-350c1e183784" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/windmillservice/soap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:del="http://wesleydekraker.nl/windmillservice/deleterequest" xmlns:typ="http://wesleydekraker.nl/windmillservice/types">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <del:deleteRequest>\r
+         <typ:id>1</typ:id>\r
+      </del:deleteRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wesleydekraker.nl/windmillservice/windmillServiceInterface/deleteRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="670f9404-56c7-44b6-93d8-db972984a224" isOneWay="false" action="" name="read" bindingOperationName="read" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b45c2dcb-ee98-44e8-b7be-a58b3141aaf9" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/windmillservice/soap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:read="http://wesleydekraker.nl/windmillservice/readrequest" xmlns:typ="http://wesleydekraker.nl/windmillservice/types">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <read:readRequest>\r
+         <typ:id>1</typ:id>\r
+      </read:readRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wesleydekraker.nl/windmillservice/windmillServiceInterface/readRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="41482ceb-d631-4bb8-86e1-a66f2ab80220" isOneWay="false" action="" name="update" bindingOperationName="update" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="106c5ea9-851f-41d8-a348-891624e8b80f" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/windmillservice/soap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:upd="http://wesleydekraker.nl/windmillservice/updaterequest" xmlns:typ="http://wesleydekraker.nl/windmillservice/types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <upd:updateRequest>
+         <typ:identity>
+            <typ:id>1</typ:id>
+         </typ:identity>
+         <typ:details>
+	         <typ:model>GE 1.5MW</typ:model>
+	         <typ:power>1.6</typ:power>
+	         <typ:lengthBlade>116</typ:lengthBlade>
+	         <typ:heightTower>212</typ:heightTower>
+	         <typ:latitude>52.325491</typ:latitude>
+	         <typ:longitude>4.579099</typ:longitude>
+         </typ:details>
+      </upd:updateRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wesleydekraker.nl/windmillservice/windmillServiceInterface/updateRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="36e89353-c9ae-4fbc-9e76-5d5074c8bb31" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="9209a5e2-b0af-46fd-a6d6-dda64b6a2dd9" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" id="330065db-617e-4f14-9b67-2a93d4f91d70" name="create"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>windmillServiceBinding</con:interface><con:operation>create</con:operation><con:request name="create" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="d8b3ade2-f357-40c8-ad7c-27b61944398b"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/windmillservice/soap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cre="http://wesleydekraker.nl/windmillservice/createrequest" xmlns:typ="http://wesleydekraker.nl/windmillservice/types">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cre:createRequest>\r
+         <typ:model>GE 1.5MW</typ:model>\r
+         <typ:power>1.5</typ:power>\r
+         <typ:lengthBlade>116</typ:lengthBlade>\r
+         <typ:heightTower>212</typ:heightTower>\r
+         <typ:latitude>52.325491</typ:latitude>\r
+         <typ:longitude>4.579099</typ:longitude>\r
+      </cre:createRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="58b02d22-abd2-44d5-82be-69aca04eb502" name="SOAP Response"/><con:assertion type="Simple Contains" id="468989db-a94e-4fe7-b298-67fb34589594" name="Contains"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wesleydekraker.nl/windmillservice/windmillServiceInterface/createRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="31363293-9ac6-4460-be8a-54c4b049287a" name="read"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>windmillServiceBinding</con:interface><con:operation>read</con:operation><con:request name="read" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="40dbfb2a-1ec1-405a-a899-eb5d008cbf7b"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/windmillservice/soap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:read="http://wesleydekraker.nl/windmillservice/readrequest" xmlns:typ="http://wesleydekraker.nl/windmillservice/types">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <read:readRequest>\r
+         <typ:id>2</typ:id>\r
+      </read:readRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="6dbdd8d6-a49f-4072-b57e-61ca697eaea2" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wesleydekraker.nl/windmillservice/windmillServiceInterface/readRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="4766f8d1-9579-4697-8464-48277fbe3820" name="update"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>windmillServiceBinding</con:interface><con:operation>update</con:operation><con:request name="update" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="b2ef97a2-69d3-4775-97a7-a4052825637c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/windmillservice/soap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:upd="http://wesleydekraker.nl/windmillservice/updaterequest" xmlns:typ="http://wesleydekraker.nl/windmillservice/types">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <upd:updateRequest>\r
+         <typ:identity>\r
+            <typ:id>1</typ:id>\r
+         </typ:identity>\r
+         <typ:details>\r
+	         <typ:model>GE 1.5MW</typ:model>
+	         <typ:power>1.6</typ:power>
+	         <typ:lengthBlade>116</typ:lengthBlade>
+	         <typ:heightTower>212</typ:heightTower>
+	         <typ:latitude>52.325491</typ:latitude>
+	         <typ:longitude>4.579099</typ:longitude>
+         </typ:details>\r
+      </upd:updateRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="db6d882d-ff89-418e-ac63-1f1a16d27e9e" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wesleydekraker.nl/windmillservice/windmillServiceInterface/updateRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="d422ba2b-22b9-49dd-be99-3f3cac666a7b" name="delete"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>windmillServiceBinding</con:interface><con:operation>delete</con:operation><con:request name="delete" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="24ebeb9a-147d-4620-bd6e-531c3a34cd3e"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/windmillservice/soap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:del="http://wesleydekraker.nl/windmillservice/deleterequest" xmlns:typ="http://wesleydekraker.nl/windmillservice/types">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <del:deleteRequest>\r
+         <typ:id>1</typ:id>\r
+      </del:deleteRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="fc8ccab7-9f7d-4a38-b582-f4041ea14274" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wesleydekraker.nl/windmillservice/windmillServiceInterface/deleteRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

@@ -1,0 +1,3 @@
+<cre:createResponse xmlns:cre="http://wesleydekraker.nl/windmillservice/createresponse" xmlns:typ="http://wesleydekraker.nl/windmillservice/types">
+<typ:id>1</typ:id>
+</cre:createResponse>

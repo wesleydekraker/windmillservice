@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:read="http://wesleydekraker.nl/windmillservice/readrequest" xmlns:typ="http://wesleydekraker.nl/windmillservice/types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <read:readRequest>
+         <typ:id>1</typ:id>
+      </read:readRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

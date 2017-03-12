@@ -1,0 +1,13 @@
+<upd:updateRequest xmlns:upd="http://wesleydekraker.nl/windmillservice/updaterequest" xmlns:typ="http://wesleydekraker.nl/windmillservice/types">
+  <typ:identity>
+    <typ:id>1</typ:id>
+  </typ:identity>
+  <typ:details>
+    <typ:model>GE 1.5MW</typ:model>
+    <typ:power>1.5</typ:power>
+    <typ:lengthBlade>116</typ:lengthBlade>
+    <typ:heightTower>212</typ:heightTower>
+    <typ:latitude>52.325491</typ:latitude>
+    <typ:longitude>4.579099</typ:longitude>
+  </typ:details>
+</upd:updateRequest>

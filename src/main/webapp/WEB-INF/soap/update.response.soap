@@ -1,0 +1,7 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns6:deleteResponse xmlns="http://wesleydekraker.nl/windmillservice/types" xmlns:ns2="http://wesleydekraker.nl/windmillservice/fault" xmlns:ns3="http://wesleydekraker.nl/windmillservice/updaterequest" xmlns:ns4="http://wesleydekraker.nl/windmillservice/readresponse" xmlns:ns5="http://wesleydekraker.nl/windmillservice/readrequest" xmlns:ns6="http://wesleydekraker.nl/windmillservice/deleteresponse" xmlns:ns7="http://wesleydekraker.nl/windmillservice/updateresponse" xmlns:ns8="http://wesleydekraker.nl/windmillservice/deleterequest" xmlns:ns9="http://wesleydekraker.nl/windmillservice/createrequest" xmlns:ns10="http://wesleydekraker.nl/windmillservice/createresponse">
+         <success>true</success>
+      </ns6:deleteResponse>
+   </S:Body>
+</S:Envelope>

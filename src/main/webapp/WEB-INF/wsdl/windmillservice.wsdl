@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+        name="WindmillService"
+        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:crq="http://wesleydekraker.nl/windmillservice/createrequest"
+        xmlns:crs="http://wesleydekraker.nl/windmillservice/createresponse"
+        xmlns:rrq="http://wesleydekraker.nl/windmillservice/readrequest"
+        xmlns:rrs="http://wesleydekraker.nl/windmillservice/readresponse"
+        xmlns:urq="http://wesleydekraker.nl/windmillservice/updaterequest"
+        xmlns:urs="http://wesleydekraker.nl/windmillservice/updateresponse"
+        xmlns:drq="http://wesleydekraker.nl/windmillservice/deleterequest"
+        xmlns:drs="http://wesleydekraker.nl/windmillservice/deleteresponse"
+        xmlns:flt="http://wesleydekraker.nl/windmillservice/fault"
+        xmlns="http://wesleydekraker.nl/windmillservice/"
+        targetNamespace="http://wesleydekraker.nl/windmillservice/">
+    <wsdl:types>
+        <xsd:schema>
+            <xsd:import namespace="http://wesleydekraker.nl/windmillservice/createrequest"
+                        schemaLocation="createrequest.xsd"/>
+            <xsd:import namespace="http://wesleydekraker.nl/windmillservice/createresponse"
+                        schemaLocation="createresponse.xsd"/>
+            <xsd:import namespace="http://wesleydekraker.nl/windmillservice/readrequest"
+                        schemaLocation="readrequest.xsd"/>
+            <xsd:import namespace="http://wesleydekraker.nl/windmillservice/readresponse"
+                        schemaLocation="readresponse.xsd"/>
+            <xsd:import namespace="http://wesleydekraker.nl/windmillservice/updaterequest"
+                        schemaLocation="updaterequest.xsd"/>
+            <xsd:import namespace="http://wesleydekraker.nl/windmillservice/updateresponse"
+                        schemaLocation="updateresponse.xsd"/>
+            <xsd:import namespace="http://wesleydekraker.nl/windmillservice/deleterequest"
+                        schemaLocation="deleterequest.xsd"/>
+            <xsd:import namespace="http://wesleydekraker.nl/windmillservice/deleteresponse"
+                        schemaLocation="deleteresponse.xsd"/>
+            <xsd:import namespace="http://wesleydekraker.nl/windmillservice/fault"
+                        schemaLocation="fault.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="createrequest">
+        <wsdl:part name="createrequest" element="crq:createRequest"/>
+    </wsdl:message>
+    <wsdl:message name="createresponse">
+        <wsdl:part name="createresponse" element="crs:createResponse"/>
+    </wsdl:message>
+    <wsdl:message name="readrequest">
+        <wsdl:part name="readrequest" element="rrq:readRequest"/>
+    </wsdl:message>
+    <wsdl:message name="readresponse">
+        <wsdl:part name="readresponse" element="rrs:readResponse"/>
+    </wsdl:message>
+    <wsdl:message name="updaterequest">
+        <wsdl:part name="updaterequest" element="urq:updateRequest"/>
+    </wsdl:message>
+    <wsdl:message name="updateresponse">
+        <wsdl:part name="updateresponse" element="urs:updateResponse"/>
+    </wsdl:message>
+    <wsdl:message name="deleterequest">
+        <wsdl:part name="deleterequest" element="drq:deleteRequest"/>
+    </wsdl:message>
+    <wsdl:message name="deleteresponse">
+        <wsdl:part name="deleteresponse" element="drs:deleteResponse"/>
+    </wsdl:message>
+    <wsdl:message name="fault">
+        <wsdl:part name="fault" element="flt:windmillFault"/>
+    </wsdl:message>
+    <wsdl:portType name="windmillServiceInterface">
+        <wsdl:operation name="create">
+            <wsdl:input message="createrequest"/>
+            <wsdl:output message="createresponse"/>
+            <wsdl:fault name="fault" message="fault"/>
+        </wsdl:operation>
+        <wsdl:operation name="read">
+            <wsdl:input message="readrequest"/>
+            <wsdl:output message="readresponse"/>
+            <wsdl:fault name="fault" message="fault"/>
+        </wsdl:operation>
+        <wsdl:operation name="update">
+            <wsdl:input message="updaterequest"/>
+            <wsdl:output message="deleteresponse"/>
+            <wsdl:fault name="fault" message="fault"/>
+        </wsdl:operation>
+        <wsdl:operation name="delete">
+            <wsdl:input message="deleterequest"/>
+            <wsdl:output message="deleteresponse"/>
+            <wsdl:fault name="fault" message="fault"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="windmillServiceBinding" type="windmillServiceInterface">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="create">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="read">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="update">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="delete">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="windmillService">
+        <wsdl:port name="WS-Port" binding="windmillServiceBinding">
+            <soap:address location="http://localhost:8080/windmillservice/soap"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
